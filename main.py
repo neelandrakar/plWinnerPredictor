@@ -143,6 +143,10 @@ def prepare_training_data(season_files: List[str]) -> Tuple[pd.DataFrame, pd.Ser
     return X_train, y_train, latest_features_df
 
 def build_and_train_model(X:pd.DataFrame,y:pd.DataFrame) -> Pipeline:
+    
+    # # print("X: ",X)
+    # print('y: ', pd.DataFrame(y))
+    # exit()
     model = Pipeline([
        ("scaler", StandardScaler()),
        ("rf", RandomForestClassifier(
@@ -186,6 +190,10 @@ def main():
   X_train, y_train, latest_features = prepare_training_data(season_files)
 
   model = build_and_train_model(X_train, y_train)
+
+  print(latest_features)
+
+  exit()
 
   predictions = predict_league_table(model, latest_features)
   predictions = predictions.iloc[:20].copy()
