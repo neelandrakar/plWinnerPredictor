@@ -206,7 +206,7 @@ def main():
 
   # This predicts winner of the 24/25 season according to the dataset... Need to upload 2425 as feature to get the winner of 25/26 season
 
-  # print(season_summaries)
+  # print(season_summaries)Hello Dhali
   
 if __name__ == "__main__":
     main()
